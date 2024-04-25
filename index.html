@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>Random Activity Generator</title>
+</head>
+<body>
+  <h1>Random Activity Generator</h1>
+  <p>Feeling bored or uninspired? Click the button below to get a random activity suggestion:</p>
+  <input type="button" value="Get Random Activity" onclick="getRandomActivity()">
+  <div id="activity"></div>
+
+  <script>
+    function getRandomActivity() {
+      google.script.run.withSuccessHandler(displayActivity).getRandomActivity();
+    }
+
+    function displayActivity(activity) {
+      document.getElementById("activity").innerText = activity;
+    }
+  </script>
+</body>
+</html>
